@@ -1,0 +1,33 @@
+import inquirer from "inquirer";
+
+const answer = await inquirer.prompt([
+  {
+    message: "please enter first number",
+    type: "number",
+    name: "firstNumber",
+  },
+  {
+    message: "please enter second number",
+    type: "number",
+    name: "secondNumber",
+  },
+  {
+    message: "please enter operator",
+    type: "list",
+    name: "operator",
+    choices: ["Add","Sub","Multiplication","Divide"],
+  },
+]);
+
+
+// conditional statement
+
+if (answer.operator === "Add"){
+    console.log(answer.firstNumber+answer.secondNumber)
+}else if (answer.operator === "Sub"){
+    console.log(answer.firstNumber-answer.secondNumber)
+}else if (answer.operator === "Multiplication"){
+    console.log(answer.firstNumber*answer.secondNumber)
+}else if (answer.operator === "Divide"){
+    console.log(answer.firstNumber/answer.secondNumber)
+}
